@@ -7,8 +7,8 @@ const ghibli = data.films;
 let movieName = moviesFilter(ghibli);
  
 function tarjetaPeliculas (titulo){
-    return 
-    `<div> 
+    console.log(titulo);
+    return `<div> 
         <h5>${titulo.title}</h5>
     </div>`
 }
@@ -21,7 +21,9 @@ function verPeliculas (peli){
 return todasLasPelis;
 }
 
-console.log(verPeliculas(ghibli))
+console.log(genderFilter(ghibli));
+
+console.log(verPeliculas(ghibli));
 
 console.log(movieName);
 

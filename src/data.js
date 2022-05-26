@@ -9,7 +9,7 @@ export const moviesFilter = (movie) => {
 //Filtrar por genero
 export const genderFilter = (character) =>{
   const gender = character.filter((obj) => {
-    obj.gender
+    obj.gender === "Male";
   });
 return gender;
 };
