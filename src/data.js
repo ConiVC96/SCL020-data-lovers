@@ -1,7 +1,15 @@
 //Filtrar peliculas por titulo
-export const moviesFilter = (movie, name) => {
-  let movieTitle = movie.filter(item => item.title == name);
-  return movieTitle;
-}; 
+export const moviesFilter = (movie) => {
+  let ordenZA = movie.sort((a, b) => (a.title < b.title) ? 1 :-1);
+  return ordenZA;
+  }
+  
 
-console.log(moviesFilter);
+
+//Filtrar por genero
+export const genderFilter = (character) =>{
+  const gender = character.filter((obj) => {
+    obj.gender === "Male";
+  });
+return gender;
+};
