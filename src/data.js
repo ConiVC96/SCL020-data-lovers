@@ -1,9 +1,16 @@
-// estas funciones son de ejemplo
+// estas funciones no son de ejemplo
 
-export const example = () => {
-  return 'example';
+//Filtrar por nombre de personaje
+export const titleFilter = (dataStudio, prueba) => {
+  let  titleMovies = dataStudio.filter(people => people.==)
+  return titleFilter;
 };
+
+
+/*
+console.log(titleFilter);
 
 export const anotherExample = () => {
   return 'OMG';
 };
+*/
