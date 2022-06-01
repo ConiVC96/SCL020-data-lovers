@@ -36,11 +36,6 @@ console.log(ghibli);
 
 
 
-   function onClick(element){  /*probando*/
-      document.getElementById(imgPoster).src = element.src;
-      document.getElementById(modal).style.display="block";
-    }
-
 /*
 
 const moviesGhibli = moviesFilter();

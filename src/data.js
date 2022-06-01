@@ -14,3 +14,11 @@ export const genderFilter = (character) =>{
 return gender;
 };
 
+export const showAndHideSpecies = () => {
+  let showAndHide = document.getElementById("species");
+  if (showAndHide.style.display === "none") {
+    showAndHide.style.display = "block";
+  } else {
+    showAndHide.style.display = "none";
+  }
+}
