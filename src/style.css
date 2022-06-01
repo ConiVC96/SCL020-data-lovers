@@ -1,194 +1,422 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mali:wght@200;400&display=swap');
-* {/*ajuste general de margin de la pagina para que no quede borde*/
-    margin: 0;
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mali:wght@200;400&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
-body, section{ /*propiedades compartidas del body y section*/
-    height: 100vh; /*medidas de viewport, se ve segun la pantalla*/
-    width: 100vw; /*medida de viewport, se ve segun la pantalla*/
-    background-color: #C4DDFF;
+
+body {
+  height: 100vh; /*medidas de viewport, se ve segun la pantalla*/
+  width: 100vw; /*medida de viewport, se ve segun la pantalla*/
+  background-color: #c4ddff;
 }
-header {
-    height: 100%;
-    width: 100%;
-    padding: 2%;
-    justify-content: center;
-    background-color: #0080BD;
-    text-align: center;
-    color: white;
+
+.containerHeader {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #0080bd;
+  text-align: center;
 }
-h1 { /*Titulo del header*/
-    font-family: 'Permanent Marker', cursive;
-    font-size: 5 em;
+
+ #homePoster{
+    width: 50vw;
+} 
+
+/*Propiedades de tipografias*/
+h1 {
+  /*Titulo del header*/
+  font-family: "Permanent Marker", cursive;
+  font-size: 5 em;
+  text-align: center;
+  color: white;
 }
-p { /*Todos los parrafos*/
-    font-family: 'Mali', cursive;
+
+p {
+    /*Todos los parrafos*/
+    font-family: "Mali", cursive;
     font-size: 1.2 em;
     white-space: pre-line;
-    color: #3D56B2;
+    color: #3d56b2;
+  }  
+
+header p,
+#characters,
+#gender,
+#species {
+  font-family: "Mali", cursive;
+  font-size: 2 em;
+  color: white;
 }
-header p, #characters, #gender, #species{
-    font-family: 'Mali', cursive;
-    font-size: 2 em;
-    color: white;
+
+/*Contenedor y propiedades de la flechita*/
+.containerArrow {
+  /*contenedor de flechita*/
+  display: flex;
+  justify-content: center;
 }
-.containerArrow {/*contenedor de flechita*/
+
+.arrow-down {
+  /*flechita superior abajo del header*/
+  width: 0;
+  height: 0;
+  border-left: 10em solid transparent;
+  border-right: 10em solid transparent;
+  border-top: 3em solid #0080bd;
+}
+
+/*Contenedor y propiedades de la seccion 1*/
+.container1,
+.container2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.section1 {
+  width: 60vw;
+  float: left;
+  margin: 10% 0 0 0;
+}
+
+.container2 h2{
+    margin: 10% 0 0 0; 
+}
+
+h2 {
+  /*Todos los h2*/
+  font-family: "Permanent Marker", cursive;
+  font-size: 4 em;
+  font-weight: bold;
+  color: #3d56b2;
+}
+
+/*Tamaño y contenedor de imagenes seccion 1*/
+.containerImg {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin: 10% 0 0 0;
+}
+
+#calcifer,
+#pinkTotoro,
+#mononoke {
+  /*tamaño de las imagenes*/
+  height: 30%;
+  width: 30%;
+}
+
+/*Propiedades de las imagenes de la seccion 2 Top pelis*/
+.containerCovers {
+  /*gif motitas de polvo*/
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+.posterImages {
+  /*imagenes de peliculas*/
+  padding: 2%;
+  height: 30%;
+  width: 30%;
+  border-radius: 15%;
+}
+/**/
+#search {
+  /*buscador de películas*/
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4%;
+}
+
+input {
+  height: 40px;
+  width: 250px;
+  border: 1.5px solid #398ab9;
+  border-radius: 10px;
+  font-size: large;
+  text-align: center;
+}
+
+.containerMiniGif{
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
-.arrow-down { /*flechita superior abajo del header*/
-    width: 0;
-    height: 0;
-    border-left: 10em solid transparent;
-    border-right: 10em solid transparent;
-    border-top: 3em solid #0080BD;
+
+#smallImg {
+  /*imagenes chiquitas*/
+  height: 100px;
+  width: 100px;
+} 
+
+/*Propiedades de los select*/
+.filters {
+  /*para que el filtrado quede centrado en grupo en la parte de arriba*/
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 10%;
+  height: 100vh;
+  width: 100vw;
 }
-h2 {/*Todos los h2*/
-    padding: 4% 0% 2% 0%;
-    margin-left: 15%;
-    font-family: 'Permanent Marker', cursive;
-    font-size:  4 em;
-    font-weight: bold;
-    color: #3D56B2;
+
+#characters,
+#gender,
+#species {
+  /*características de personajes, género y especies para darle estilo*/
+  height: 5%;
+  width: 20%;
+  border: 1.5px solid #398ab9;
+  border-radius: 10px;
+  font-size: large;
+  background-color: #398ab9;
+  text-align: center;
+  font-size: 1.5em;
 }
-section p { /*propiedades de los p contenidos en los section*/
-    padding-top: 2%;
-    padding-left: 15%;
-    padding-right: 10%;
-    font-weight: normal;
-    font-size: 1.2 em;
-    color: #3D56B2;
+
+#characters:hover,
+#gender:hover,
+#species:hover {
+  background-color: #3d56b2;
 }
-.articleToLeft { /*para que los articulos o parrafos de las dos secciones queden al lado izquierdo y la imagen a la*/
-    width: 60%;
-    float: left;
-    margin-left: 5%;
+
+/*Elementos del Footer*/
+.arrowEnd {
+  /*contenedor de flechita*/
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 0;
+  height: 0;
+  border-left: 15em solid transparent;
+  border-right: 15em solid transparent;
+  border-bottom: 2em solid #0080bd;
 }
-.containerImg { /*contenedor de objetos centrados y contenedor de imagenes centradas*/
-    display: flex;
-    justify-content: center;  
-    padding-top: 10%;
+
+nav p {
+  /*título redes sociales*/
+  text-align: center;
+  color: white;
 }
-#calcifer, #pinkTotoro, #mononoke {/*tamaño de las imagenes*/
-    height: 20%;
-    width: 20%;
+
+footer{
+    width: 100vw;
 }
-.containerGif { /*gif motitas de polvo*/
-    display: flex;
-    justify-content: center; 
-    padding-top: 0%;
+
+.elementsNav {
+  /*nav del footer*/
+  background-color: #0080bd;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
-.containerEnd{/*contenedor de imagenes a la derecha*/
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 10%; 
+
+.fa-brands {
+  /*Son los íconos de redes sociales*/
+  font-size: 40px;
+  color: white;
 }
-.section2 {
-    height: 100%;
-    width: 100%;
-    margin-top: 10%;
-    background-color: #7FB5FF; /*Fondo de otro tono o color */
+
+.fa-brands:hover {
+  color: #3d56b2;
 }
-.containerCovers { /*gif motitas de polvo*/
-    display: flex;
-    justify-content: center; 
-    padding-top: 0%;
-}
-    .posterImages { /*imagenes de peliculas*/
-    padding: 2%;
-    height: 15%;
-    width: 15%;
-    border-radius: 15%;
-    }
-#search{ /*buscador de películas*/
-    display: flex;
-    justify-content: center;
-    margin-top: 4%;
-}
-    input[type=search]{ 
-        height:40px;
-        width: 250px;
-        border: 1.5px solid #398AB9;
-        border-radius: 10%;
-        font-size:large;
-    }
-    .smallImg {/*imagenes chiquitas*/
-        height: 10%;
-        width: 10%;
-    }
-.filters { /*para que el filtrado quede centrado en grupo en la parte de arriba*/
-       display: flex;
-        align-items: flex-start;
-        flex-direction: row;
-        margin-top: 10%;
-        height: 100vh;
-        width: 100%;
-        justify-content: space-evenly;
-    }
-    #characters, #gender, #species{ /*características de personajes, género y especies para darle estilo*/
-        height:40px;
-        width: 250px;
-        border: 1.5px solid #398AB9;
-        border-radius: 10px;
-        font-size:large;
-        background-color: #398AB9;
-    }
-.arrowEnd{/*contenedor de flechita*/
-        display:flex;
-       margin-left: auto;
-       margin-right: auto;
-        width: 0;
-        height: 0;
-        border-left: 15em solid transparent;
-        border-right: 15em solid transparent;
-        border-bottom: 2em solid #0080BD;
-    }
-nav p { /*título redes sociales*/
-        text-align:center;
-        color: white;
-    }
-    .elementsNav{ /*nav del footer*/
-        background-color: #0080BD;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        padding-top: 1%;
-        padding-bottom: 1%;
-    }
-    .fa-brands{ /*Son los íconos de redes sociales*/
-        font-size: 40px;
-        color:white;
-    }
 
 /*tablet*/
 @media (max-width: 1024px) and (min-width: 426px){
     #chihiroGif{
         display: none;
     }
-
-    h1 {
-        font-size: 10 em;
+    #smallImg{
+        display: none;
     }
+    #homePoster{
+        width: 80vw;
+        }
+        #pinkTotoro{
+            display: none;
+        }
 
-    header p{
-        font-size: 1.2 em;
+        #calcifer,
+        #pinkTotoro,
+        #mononoke {
+            /*tamaño de las imagenes*/
+            height: 50%;
+            width: 50%;
+        }
+    h1{
+        font-weight: bold;
+        font-size: 5em;
     }
 
     h2{
-     padding: 10% 0% 4% 0%;
-     margin-left: 15%;
+        font-size: 2.5em;
+        font-weight: bold;
     }
 
-    section p{
-        padding-top: 2% 0% 2% 0%;
-        margin-right: 5%;
+    p{
+        font-weight: normal;
+        font-size: 1.7em;
     }
 
-    .articleToLeft { /*para que los articulos o parrafos de las dos secciones queden al lado izquierdo y la imagen a la*/
-       justify-content: center;
-        width: 100%;
-       margin-left: 0;
-       
-    }
+    .filters {
+        /*para que el filtrado quede centrado en grupo en la parte de arriba*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+      }
+    
+      #characters,
+      #gender,
+      #species {
+        height: 10%;
+        width: 60%;
+        margin: 2% 10% 2% 10%;
+        text-align: center;
+        font-size: 2em;
+      }
+
+
+      #characters{
+          margin-top: 10%;
+      }
+      #searchFilms{
+          margin-top: 20%;
+          height: 40px;
+        width: 250px;
+      }
 }
 
+/*mobile*/
+@media (max-width: 425px) and (min-width: 320px) {
+    #chihiroGif {
+      display: none;
+    }
+    #smallImg{
+        display: none;
+    }
+    #homePoster{
+        width: 100vw;
+    }
+    #pinkTotoro{
+        display: none;
+    }
+    #calcifer,
+        #pinkTotoro,
+        #mononoke {
+            /*tamaño de las imagenes*/
+            height: 50%;
+            width: 50%;
+        }
+
+        h1{
+            font-weight: bold;
+            font-size: 3em;
+        }
+
+        .banner p{
+            margin: 5%;
+        }
+    
+        h2{
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+    
+        p{
+            font-weight: normal;
+            font-size: 1.5em;
+        }
+    #search {
+        /*buscador de películas*/
+        display: none;
+    }
+    input{
+        height: 40px;
+        width: 250px;
+        border: 1.5px solid #398ab9;
+        border-radius: 10px;
+        font-size: large;
+        text-align: center;
+      }
+
+    .arrowEnd {
+        /*contenedor de flechita*/
+        display: none}
+    
+    .containerCovers {
+      /*gif motitas de polvo*/
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-top: 0%;
+    }
+  
+    .posterImages {
+      /*imagenes de peliculas*/
+      padding: 2%;
+      height: 50%;
+      width: 50%;
+      border-radius: 15%;
+    }
+  
+    .filters {
+      /*para que el filtrado quede centrado en grupo en la parte de arriba*/
+      display: flex;
+      flex-direction: column;
+        
+      align-items: center;
+      justify-content: center;
+      align-content: center;
+    }
+  
+    #characters,
+    #gender,
+    #species {
+      margin: 5% 10% 5% 10%;
+      height: 10%;
+      width: 50%;
+      margin: 2% 10% 2% 10%;
+      text-align: center;
+      font-size: 1.5em;
+    }
+
+    .fa-brands {
+        font-size: 40px;
+        padding: 5px;
+    }
+
+    .elementsNav p{
+        font-size: 20px;
+    }
+  }
