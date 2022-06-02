@@ -29,7 +29,7 @@ export const genderFilter = (character) =>{
 
 return gender;
 });
-
+}
 /*export const showAndHideSpecies = () => {
   let showAndHide = document.getElementById("species");
   if (showAndHide.style.display === "none") {
@@ -37,4 +37,4 @@ return gender;
   } else {
     showAndHide.style.display = "none";
   }
-}*/
+}*/ 
