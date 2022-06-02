@@ -1,20 +1,22 @@
 
-import { genderFilter, moviesFilter } from './data.js';
+import { genderFilter, moviesZAfilter } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 
 //Accediendo a la Data
 const ghibli = data.films;
 //const prueba = ghibli[2].description;
-let movieName = moviesFilter(ghibli);
+//let movieName = moviesFilter(ghibli);
  
 function tarjetaPeliculas (titulo){
     console.log(titulo);
     return `<div> 
         <h5>${titulo.title}</h5>
         <p>${titulo.description}</p>
+
         <p>${titulo["people"].map((people)=>{return `<p>${people}</p>`;}).join("")
     } </p>
+
     </div>`
 }
 
@@ -26,7 +28,30 @@ function verPeliculas (peli){
 return todasLasPelis;
 }
 
-console.log(genderFilter(ghibli.people));
+
+/*
+document.getElementById("orderAZ").addEventListener("change", (event)=>{
+    let userSelect = (event.target.value);
+
+    if (userSelect == "A-Z") {
+        let orderSelectAZ = moviesAZfilter(ghibli);
+        let cardAZ = document.getElementById("prueba");
+        cardAZ.innerHTML = orderSelectAZ;
+    } else if ( userSelect == "Z-A"){
+        let orderSelectZA = moviesZAfilter(ghibli);
+    }
+}) */
+
+let cardGhibli = document.getElementById("prueba");
+const alfabeticOrder = document.querySelector('#orderAZ');
+alfabeticOrder.addEventListener('change', (event) => {
+  cardGhibli.innerHTML = '';
+  verPeliculas(moviesZAfilter(ghibli, alfabeticOrder.target.value));
+});
+
+
+//console.log(genderFilter(ghibli));
+
 
 console.log(verPeliculas(ghibli));
 
