@@ -1,15 +1,20 @@
-//Filtrar peliculas por titulo
-export const moviesFilter = (movie) => {
-  let ordenZA = movie.sort((a, b) => (a.title < b.title) ? 1 :-1);
-  return ordenZA;
-  }
+ //Funciones para sortear el orden
+export const listAZ = (movie) => { //ordena de la AZ
+  let orderAZ = movie.sort((a, b) => (a.title > b.title) ? 1 :-1);
+    return orderAZ;
+}
+
+export const listZA = (movie) => { //ordena de la ZA
+  let orderZA = movie.sort((a, b) => (a.title < b.title) ? 1 :-1);
+    return orderZA;
+}
+  
   
 
-
-//Filtrar por genero
-export const genderFilter = (character) =>{
-  const gender = character.filter((obj) => {
-    obj.gender === "Male";
-  });
-return gender;
-};
+// //Filtrar por genero
+// export const genderFilter = (character) =>{
+//   const gender = character.filter((obj) => {
+//     obj.gender === string;
+//   });
+// return gender;
+// };
