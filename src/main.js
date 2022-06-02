@@ -5,18 +5,22 @@ import data from './data/ghibli/ghibli.js';
 const ghibli = data.films; //data de ghibli
 const top1 = ghibli[2];
 const top2 = ghibli[3];
-const top3 = ghibli[4];
-const top4 = ghibli[5];
-const top5 = ghibli[11];
+const top3 = ghibli[10];
+const top4 = ghibli[12];
+const top5 = ghibli[8];
 
+console.log(ghibli);
 let ghibliTop5 = [top1, top2, top3, top4, top5];
 console.log(ghibliTop5);
 
 //Funcion que cargue el Top5
-// const moviesTop5 = () => {
-//     window.addEventListener("load", () => { 
-//         posterCard(ghibliTop5);
-// } 
+const moviesTop5 = () => {
+    let arraytop5 = window.addEventListener("load", () => { 
+        posterCard(ghibliTop5);  
+    })
+    return arraytop5;
+}
+moviesTop5();
 
 // Función para limpiar, tarjeta vacia
 const emptyCard = () => { 
@@ -120,25 +124,3 @@ document.getElementById("orderAZ").addEventListener("change", (event)=>{
 //console.log(genderFilter(ghibli));
 
 //console.log(verPeliculas(ghibli));
-
-/*console.log(ghibli);
-
-
-
-
-
-
-const moviesGhibli = moviesFilter();
-
-const prueba = document.createElement("section");
-prueba.innerHTML = "Hello Button";
-document.body.appendChild(prueba);
-
-    let seccion = document.createElement("button");
-    let texto = document.createTextNode("Esto es una Prueba");
-    seccion.appendChild(texto);
-    document.body.appendChild(seccion);
-    
-
-*/
-    
