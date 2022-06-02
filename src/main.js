@@ -22,6 +22,12 @@ const moviesTop5 = () => {
 }
 moviesTop5();
 
+
+// cargar todos los poster al cargar la página
+window.addEventListener("load", () => { 
+    posterCard(ghibli);
+});
+
 // Función para limpiar, tarjeta vacia
 const emptyCard = () => { 
     document.getElementById("Prueba").innerHTML = "";
@@ -63,64 +69,58 @@ alfabeticOrder.addEventListener('change',  (e) => {
         }
 });
 
-// cargar todos los poster al cargar la página
-window.addEventListener("load", () => { 
-    posterCard(ghibli);
+//console.log(listAZ(ghibli));
+
+
+
+// Elegir género
+let genderOrder= document.getElementById("gender");
+genderOrder.addEventListener('change',  (e) => {
+    let userSelect = e.target.value;
+    emptyCard();
+    if (userSelect == "Female") { // Ordena de A a Z
+        let characterGender = genderFilter(ghibli);
+        tarjetaPersonajes(characterGender);
+        return
+    } else if (userSelect == "Male") { // Ordena de Z a A
+        let characterGender = genderFilter(ghibli);
+        tarjetaPersonajes(characterGender);
+        return
+    } else if (userSelect == "NA") { // Ordena de Z a A
+            let characterGender = genderFilter(ghibli);
+            tarjetaPersonajes(characterGender);
+            return
+    } else {
+        return userSelect == "All";
+    }
 });
 
 
-console.log(listAZ(ghibli));
-console.log(ghibli);
-console.log(nameZA);
-console.log(prueba1);
+
+// Tarjetita de personaje segun ej coach
+function tarjetaPersonajes (elemento){
+    console.log(elemento);
+    let tarjetita = `<div> 
+        <h5>${elemento.title}</h5>
+        <p>${elemento.description}</p>
+        <p>${elemento["people"]
+        .map((people) => {
+          return `<li>${people}</li>`;
+        })}</p>
+    </div>`
+    return tarjetita;
+}
 
 
 
+function verPersonajes (peli){
+ let  todasLasPelis = "";
+ peli.forEach((elemento) => todasLasPelis += tarjetaPersonajes(elemento));
+return todasLasPelis;
+}
 
 
 
-// function tarjetaPeliculas (titulo){
-//     console.log(titulo);
-//     return `<div> 
-//         <h5>${titulo.title}</h5>
-//         <p>${titulo.description}</p>
-//         <p>${titulo["people"]
-//         .map((people) => {
-//           return `<li>${people}</li>`;
-//         })}</p>
-       
-//     </div>`
-// }
+console.log(genderFilter(ghibli));
 
-
-
-// function verPeliculas (peli){
-//  let  todasLasPelis = "";
-//  peli.forEach((titulo) => todasLasPelis += tarjetaPeliculas(titulo));
-// return todasLasPelis;
-// }
-
-/*
-document.getElementById("orderAZ").addEventListener("change", (event)=>{
-    let userSelect = (event.target.value);
-
-    if (userSelect == "A-Z") {
-        let orderSelectAZ = moviesAZfilter(ghibli);
-        let cardAZ = document.getElementById("prueba");
-        cardAZ.innerHTML = orderSelectAZ;
-    } else if ( userSelect == "Z-A"){
-        let orderSelectZA = moviesZAfilter(ghibli);
-    }
-}) */
-
-// let cardGhibli = document.getElementById("prueba");
-// const alfabeticOrder = document.querySelector('#orderAZ');
-// alfabeticOrder.addEventListener('change', (event) => {
-//   cardGhibli.innerHTML = '';
-//   verPeliculas(moviesZAfilter(ghibli, alfabeticOrder.target.value));
-// });
-
-
-//console.log(genderFilter(ghibli));
-
-//console.log(verPeliculas(ghibli));
+console.log(verPersonajes(ghibli));

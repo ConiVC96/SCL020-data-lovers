@@ -11,10 +11,8 @@ export const listZA = (movie) => { //ordena de la ZA
   
   
 
-// //Filtrar por genero
-// export const genderFilter = (character) =>{
-//   const gender = character.filter((obj) => {
-//     obj.gender === string;
-//   });
-// return gender;
-// };
+//Filtrar por genero
+export const genderFilter = (character, seleccion) =>{
+  const gender = character.filter(element => element.gender == seleccion);
+return gender;
+};
