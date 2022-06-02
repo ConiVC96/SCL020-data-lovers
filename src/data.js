@@ -16,8 +16,8 @@ export const listZA = (movie) => { //ordena de la ZA
 export const genderFilter = (character, seleccion) =>{
   const gender = character.filter(element => element.gender == seleccion);
 return gender;
-});
-}
+};
+
 /*export const showAndHideSpecies = () => {
   let showAndHide = document.getElementById("species");
   if (showAndHide.style.display === "none") {
