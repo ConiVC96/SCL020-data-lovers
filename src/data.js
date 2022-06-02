@@ -28,13 +28,13 @@ export const genderFilter = (character) =>{
     obj.gender === string;
 
 return gender;
-};
+});
 
-export const showAndHideSpecies = () => {
+/*export const showAndHideSpecies = () => {
   let showAndHide = document.getElementById("species");
   if (showAndHide.style.display === "none") {
     showAndHide.style.display = "block";
   } else {
     showAndHide.style.display = "none";
   }
-}
+}*/
