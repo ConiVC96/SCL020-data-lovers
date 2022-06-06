@@ -10,19 +10,8 @@ export const listZA = (movie) => { //ordena de la ZA
     return orderZA;
 }
   
-  
-
 //Filtrar por genero
 export const genderFilter = (character, seleccion) =>{
   const gender = character.filter(element => element.gender == seleccion);
 return gender;
 };
-
-/*export const showAndHideSpecies = () => {
-  let showAndHide = document.getElementById("species");
-  if (showAndHide.style.display === "none") {
-    showAndHide.style.display = "block";
-  } else {
-    showAndHide.style.display = "none";
-  }
-}*/ 

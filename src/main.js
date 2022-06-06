@@ -4,14 +4,6 @@ import { listZA,listAZ } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 
-/*const data = document.getElementById("bloque");
-const probando = document.querySelector(".container");
-bloque.addEventListener("change",(evt) => {
-    probando.style.display = evt.target.value;
-});
-/*style= display="block"*/
-
-
 //Accediendo a la Data
 
 const ghibli = data.films; //data de ghibli
@@ -93,9 +85,9 @@ genderOrder.addEventListener('change',  (e) => {
     let userSelect = e.target.value;
     emptyCard();
     if (userSelect == "Female") { // Ordena de A a Z
-        let characterGender = genderFilter(ghibli);
+        let characterGender = genderFilter(ghibli, userSelect);
         tarjetaPersonajes(characterGender);
-        return
+        return 
     } else if (userSelect == "Male") { // Ordena de Z a A
         let characterGender = genderFilter(ghibli);
         tarjetaPersonajes(characterGender);

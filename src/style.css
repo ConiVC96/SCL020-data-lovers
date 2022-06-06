@@ -487,18 +487,10 @@ Propiedades Modal o tarjetitas de peliculas*/
         font-size: 20px;
     }
   }
-#musicGhibli { /*estilo de imagen de musica*/
+/*#musicGhibli { /*estilo de imagen de musica
   display: flex;
   justify-content: center;
 }
-
-
-  /*.containerCard{
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: 50vh;
-    width: 50vh;
-}*/
+*/
 
   
