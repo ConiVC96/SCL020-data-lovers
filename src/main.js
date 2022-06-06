@@ -1,13 +1,14 @@
-import { listZA,listAZ } from './data.js';
+import { listZA, listAZ, genderFilter} from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 //Accediendo a la Data
 const ghibli = data.films; //data de ghibli
-const top1 = ghibli[2];
+const top1 = ghibli[1];
 const top2 = ghibli[3];
 const top3 = ghibli[10];
 const top4 = ghibli[12];
 const top5 = ghibli[8];
+
 
 console.log(ghibli);
 let ghibliTop5 = [top1, top2, top3, top4, top5];
@@ -21,6 +22,8 @@ const moviesTop5 = () => {
     return arraytop5;
 }
 moviesTop5();
+
+console.log(genderFilter(ghibli));
 
 
 // cargar todos los poster al cargar la página
@@ -46,7 +49,7 @@ const posterCard = (movie) => { //Funcion para mostrar tarjetitas
         </section>
         </section>`;
         empty.innerHTML += cardMovie;
-        console.log(movie);
+       // console.log(movie);
     };
 }
 
@@ -69,7 +72,24 @@ alfabeticOrder.addEventListener('change',  (e) => {
         }
 });
 
-//console.log(listAZ(ghibli));
+
+
+
+//tarjetitas de personaje
+const characterCard = (movie) => { //Funcion para mostrar tarjetitas
+    for (let i = 0; i < movie.length; ++i) {
+        let cardMovie = `<section class="containerCard">
+        <section class="moviesCard">
+        <h2> ${movie[i].name} </h2>
+        <div><p>${movie[i].gender}</p></div>
+        <div><p>${movie[i].specie}</p></div>
+        <img class="imgCard" src="${movie[i].img}">
+        </section>
+        </section>`;
+        empty.innerHTML += cardMovie;
+        console.log(movie);
+    };
+}
 
 
 
@@ -77,50 +97,20 @@ alfabeticOrder.addEventListener('change',  (e) => {
 let genderOrder= document.getElementById("gender");
 genderOrder.addEventListener('change',  (e) => {
     let userSelect = e.target.value;
-    emptyCard();
-    if (userSelect == "Female") { // Ordena de A a Z
-        let characterGender = genderFilter(ghibli);
-        tarjetaPersonajes(characterGender);
+    emptyCard()
+    if (userSelect == "Female") { // Seleccciona femenino
+        let characterGender = genderFilter(ghibli, userSelect);
+        characterCard(characterGender);
+ console.log(characterGender);
+    } else if (userSelect == "Male") { // Selecciona masculino
+        let characterGender = genderFilter(ghibli, userSelect);
+        characterCard(characterGender);
         return
-    } else if (userSelect == "Male") { // Ordena de Z a A
-        let characterGender = genderFilter(ghibli);
-        tarjetaPersonajes(characterGender);
-        return
-    } else if (userSelect == "NA") { // Ordena de Z a A
-            let characterGender = genderFilter(ghibli);
-            tarjetaPersonajes(characterGender);
+    } else if (userSelect == "NA") { // selecciona NA
+            let characterGender = genderFilter(ghibli, userSelect);
+            characterCard(characterGender);
             return
     } else {
         return userSelect == "All";
     }
 });
-
-
-
-// Tarjetita de personaje segun ej coach
-function tarjetaPersonajes (elemento){
-    console.log(elemento);
-    let tarjetita = `<div> 
-        <h5>${elemento.title}</h5>
-        <p>${elemento.description}</p>
-        <p>${elemento["people"]
-        .map((people) => {
-          return `<li>${people}</li>`;
-        })}</p>
-    </div>`
-    return tarjetita;
-}
-
-
-
-function verPersonajes (peli){
- let  todasLasPelis = "";
- peli.forEach((elemento) => todasLasPelis += tarjetaPersonajes(elemento));
-return todasLasPelis;
-}
-
-
-
-console.log(genderFilter(ghibli));
-
-console.log(verPersonajes(ghibli));
