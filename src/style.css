@@ -251,12 +251,11 @@ footer{
 }
 /*Propiedades tarjetas html*/
 .containerCard{
-    display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 2%;
-  height: 100vh;
-  width: 100vw;
+    display: inline-block;
+    flex-wrap: wrap;
+    margin: 2%;
+    height: 50vh;
+    width: 50vw;
 }
 .moviesCard{
     width: 200px;
@@ -488,3 +487,18 @@ Propiedades Modal o tarjetitas de peliculas*/
         font-size: 20px;
     }
   }
+#musicGhibli { /*estilo de imagen de musica*/
+  display: flex;
+  justify-content: center;
+}
+
+
+  /*.containerCard{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 50vh;
+    width: 50vh;
+}*/
+
+  

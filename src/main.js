@@ -4,6 +4,14 @@ import { listZA,listAZ } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 
+/*const data = document.getElementById("bloque");
+const probando = document.querySelector(".container");
+bloque.addEventListener("change",(evt) => {
+    probando.style.display = evt.target.value;
+});
+/*style= display="block"*/
+
+
 //Accediendo a la Data
 
 const ghibli = data.films; //data de ghibli
@@ -104,7 +112,7 @@ genderOrder.addEventListener('change',  (e) => {
 
 
 
-// Tarjetita de personaje segun ej coach
+/* Tarjetita de personaje segun ej coach
 function tarjetaPersonajes (elemento){
     console.log(elemento);
     let tarjetita = `<div> 
@@ -116,7 +124,7 @@ function tarjetaPersonajes (elemento){
         })}</p>
     </div>`
     return tarjetita;
-}
+}*/
 
 
 
@@ -132,4 +140,5 @@ return todasLasPelis;
 
 console.log(genderFilter(ghibli));
 
-console.log(verPersonajes(ghibli));
+console.log(verPersonajes(ghibli));*/
+
