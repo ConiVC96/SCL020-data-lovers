@@ -14,13 +14,14 @@ export const listZA = (movie) => { //ordena de la ZA
 
 //Filtrar por genero
 export const genderFilter = (movies, gender) =>{
-  console.log(movies);
+ 
   const characters = movies.forEach((movie)=> {
     
     let allChara = movie.people;
     
     let filterChara = allChara.filter((character)=> character.gender == gender)
     console.log(filterChara);
+    
   });
 return characters;
 };
