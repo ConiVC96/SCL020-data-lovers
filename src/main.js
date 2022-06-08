@@ -1,9 +1,13 @@
+
 import { listZA, listAZ, genderFilter} from './data.js';
 import data from './data/ghibli/ghibli.js';
 
+
 //Accediendo a la Data
+
 const ghibli = data.films; //data de ghibli
-const top1 = ghibli[1];
+
+/*const top1 = ghibli[1];
 const top2 = ghibli[3];
 const top3 = ghibli[10];
 const top4 = ghibli[12];
@@ -17,9 +21,8 @@ const moviesTop5 = () => {
         posterCard(ghibliTop5);  
     })
     return arraytop5;
-}
-moviesTop5();
-
+} 
+moviesTop5();*/
 
 // Función para limpiar, tarjeta vacia
 const emptyCard = () => { 
@@ -39,9 +42,8 @@ const posterCard = (movie) => { //Funcion para mostrar tarjetitas
         </section>
         </section>`;
         empty.innerHTML += cardMovie;
-    };
+    }
 }
-
 
 //Elegir de la A-Z y de la Z-A
 let alfabeticOrder = document.getElementById("orderAZ");
@@ -59,8 +61,6 @@ alfabeticOrder.addEventListener('change',  (e) => {
         } else {
             alert("No es una opción valida");
         }
-});
-
 
 let genderOrder= document.getElementById("gender");
 
@@ -72,11 +72,10 @@ const characterCard = (character) => { //Funcion para mostrar tarjetitas
         <h2> ${character[i].name} </h2>
         <img class="imgCard" src="${character[i].img}">
         </section>
-        </section>`
-       genderOrder.innerHTML += tarjetita;
-    };
+        </section>`;
+        empty.innerHTML += cardMovie;
+    }
 }
-
 
 // Elegir género
 genderOrder.addEventListener('change',  (e) => {
@@ -100,3 +99,4 @@ genderOrder.addEventListener('change',  (e) => {
         return ;
     }
 });
+

@@ -1,24 +1,24 @@
-import { listAZ, listZA, genderFilter } from '../src/data.js';
 
+import { listAZ } from '../src/data.js';
 
-describe('order movies from A to Z', () => {
-  let dataMovies = [{"title": "Kiki's Delivery Service"},{"title": "My Neighbor Totoro"},{"title": "Castle in the Sky"}]
+describe('orderAZ', () => {
+
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    const testData = [ {"title": "Grave of the Fireflies"},{"title": "Castle in the Sky"}];
+    const orderData = listAZ(testData);
+console.log(orderData)
+   /* expect(typeof example).toBe('function');*/
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
-  });
+
 });
 
 
-describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
-  });
+/* 
+1-Verificar la correctitud de nuesrtro código
+2-Sirven como documentación del código
+3-Nos ayuda con la modularización
+Test unitario (ej una función que cifre)
 
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
-  });
-});
+
+*/
