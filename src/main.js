@@ -1,9 +1,13 @@
+
 import { listZA, listAZ, genderFilter} from './data.js';
 import data from './data/ghibli/ghibli.js';
 
+
 //Accediendo a la Data
+
 const ghibli = data.films; //data de ghibli
-const top1 = ghibli[1];
+
+/*const top1 = ghibli[1];
 const top2 = ghibli[3];
 const top3 = ghibli[10];
 const top4 = ghibli[12];
@@ -20,10 +24,9 @@ const moviesTop5 = () => {
         posterCard(ghibliTop5);  
     })
     return arraytop5;
-}
-moviesTop5();
+} 
+moviesTop5();*/
 
-console.log(genderFilter(ghibli));
 
 
 // cargar todos los poster al cargar la página
@@ -49,8 +52,10 @@ const posterCard = (movie) => { //Funcion para mostrar tarjetitas
         </section>
         </section>`;
         empty.innerHTML += cardMovie;
+
        // console.log(movie);
-    };
+    }
+
 }
 
 
@@ -70,9 +75,9 @@ alfabeticOrder.addEventListener('change',  (e) => {
         } else {
             alert("No es una opción valida");
         }
+
+
 });
-
-
 
 
 //tarjetitas de personaje
@@ -88,7 +93,7 @@ const characterCard = (movie) => { //Funcion para mostrar tarjetitas
         </section>`;
         empty.innerHTML += cardMovie;
         console.log(movie);
-    };
+    }
 }
 
 
@@ -114,3 +119,4 @@ genderOrder.addEventListener('change',  (e) => {
         return userSelect == "All";
     }
 });
+

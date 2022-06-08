@@ -1,3 +1,4 @@
+
  //Funciones para sortear el orden
 export const listAZ = (movie) => { //ordena de la AZ
   let orderAZ = movie.sort((a, b) => (a.title > b.title) ? 1 :-1);
@@ -9,7 +10,7 @@ export const listZA = (movie) => { //ordena de la ZA
     return orderZA;
 }
   
-  
+
 
 //Filtrar por genero
 export const genderFilter = (movies, gender) =>{
@@ -23,5 +24,6 @@ export const genderFilter = (movies, gender) =>{
   });
 return characters;
 };
+
 
 

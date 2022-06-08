@@ -251,12 +251,11 @@ footer{
 }
 /*Propiedades tarjetas html*/
 .containerCard{
-    display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   margin: 2%;
-  height: 50vh;
-  width: 50vw;
+
 }
 .moviesCard{
     width: 200px;
