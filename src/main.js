@@ -9,10 +9,7 @@ const top3 = ghibli[10];
 const top4 = ghibli[12];
 const top5 = ghibli[8];
 
-
-console.log(ghibli);
 let ghibliTop5 = [top1, top2, top3, top4, top5];
-console.log(ghibliTop5);
 
 //Funcion que cargue el Top5
 const moviesTop5 = () => {
@@ -23,13 +20,6 @@ const moviesTop5 = () => {
 }
 moviesTop5();
 
-console.log(genderFilter(ghibli));
-
-
-// cargar todos los poster al cargar la página
-window.addEventListener("load", () => { 
-    posterCard(ghibli);
-});
 
 // Función para limpiar, tarjeta vacia
 const emptyCard = () => { 
@@ -49,7 +39,6 @@ const posterCard = (movie) => { //Funcion para mostrar tarjetitas
         </section>
         </section>`;
         empty.innerHTML += cardMovie;
-       // console.log(movie);
     };
 }
 
@@ -73,28 +62,23 @@ alfabeticOrder.addEventListener('change',  (e) => {
 });
 
 
-
+let genderOrder= document.getElementById("gender");
 
 //tarjetitas de personaje
-const characterCard = (movie) => { //Funcion para mostrar tarjetitas
-    for (let i = 0; i < movie.length; ++i) {
-        let cardMovie = `<section class="containerCard">
+const characterCard = (character) => { //Funcion para mostrar tarjetitas
+    for (let i = 0; i < character.length; ++i) {
+        let tarjetita = `<section class="containerCard">
         <section class="moviesCard">
-        <h2> ${movie[i].name} </h2>
-        <div><p>${movie[i].gender}</p></div>
-        <div><p>${movie[i].specie}</p></div>
-        <img class="imgCard" src="${movie[i].img}">
+        <h2> ${character[i].name} </h2>
+        <img class="imgCard" src="${character[i].img}">
         </section>
-        </section>`;
-        empty.innerHTML += cardMovie;
-        console.log(movie);
+        </section>`
+       genderOrder.innerHTML += tarjetita;
     };
 }
 
 
-
 // Elegir género
-let genderOrder= document.getElementById("gender");
 genderOrder.addEventListener('change',  (e) => {
     let userSelect = e.target.value;
     emptyCard()
@@ -110,7 +94,9 @@ genderOrder.addEventListener('change',  (e) => {
             let characterGender = genderFilter(ghibli, userSelect);
             characterCard(characterGender);
             return
-    } else {
-        return userSelect == "All";
+    } else if (userSelect == "All") {
+        
+        characterCard(characterGender);
+        return ;
     }
 });

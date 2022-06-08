@@ -1,7 +1,8 @@
-import { example, anotherExample } from '../src/data.js';
+import { listAZ, listZA, genderFilter } from '../src/data.js';
 
 
-describe('example', () => {
+describe('order movies from A to Z', () => {
+  let dataMovies = [{"title": "Kiki's Delivery Service"},{"title": "My Neighbor Totoro"},{"title": "Castle in the Sky"}]
   it('is a function', () => {
     expect(typeof example).toBe('function');
   });
